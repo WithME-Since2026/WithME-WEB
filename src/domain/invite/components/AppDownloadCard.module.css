@@ -1,0 +1,39 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-md);
+  background: var(--color-invite-info-background);
+  border: 1px solid var(--color-invite-info-border);
+  border-radius: var(--radius-card);
+}
+
+.title {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 19.5px;
+  color: var(--color-invite-text-strong);
+}
+
+.description {
+  margin: 0;
+  padding-top: var(--spacing-xs);
+  font-size: 12px;
+  line-height: 19.5px;
+  color: var(--color-invite-text-muted);
+}
+
+.downloadButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  height: 40px;
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 19.5px;
+  color: #ffffff;
+  background: var(--color-meeting-primary);
+  border-radius: var(--radius-md);
+}

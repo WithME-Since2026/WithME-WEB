@@ -13,20 +13,29 @@ body {
 body {
   font: var(--font-body1);
   color: var(--color-text-primary);
-  background: var(--color-surface);
+  background: var(--color-invite-page-background);
   -webkit-font-smoothing: antialiased;
 }
 
 #root {
-  max-width: var(--layout-max-width);
   min-height: 100dvh;
-  margin: 0 auto;
-  background: var(--color-background);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
 }
 
 button {
-  font: inherit;
+  padding: 0;
+  border: none;
+  background: none;
   cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
 }
 
 img {

@@ -1,0 +1,33 @@
+.row {
+  display: flex;
+  gap: 12px;
+}
+
+.button {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  height: 56px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 19.5px;
+  color: var(--color-invite-text-muted);
+  background: var(--color-background);
+  border: 2px solid var(--color-invite-border);
+  border-radius: var(--radius-card);
+}
+
+.attendSelected {
+  color: var(--color-invite-attend);
+  background: var(--color-invite-attend-background);
+  border-color: var(--color-invite-attend);
+}
+
+.absentSelected {
+  color: var(--color-invite-absent);
+  background: var(--color-invite-absent-background);
+  border-color: var(--color-invite-absent);
+}

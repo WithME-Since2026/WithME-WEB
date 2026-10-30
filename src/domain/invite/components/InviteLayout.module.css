@@ -1,0 +1,41 @@
+.page {
+  display: flex;
+  justify-content: center;
+  min-height: 100dvh;
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--layout-max-width);
+  overflow: hidden;
+  align-self: flex-start;
+  background: var(--color-background);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 8px 32px 0 var(--color-invite-card-shadow);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 휴대폰 폭에서는 카드 테두리 없이 화면을 꽉 채움 */
+@media (max-width: 512px) {
+  .page {
+    padding: 0;
+  }
+
+  .card {
+    max-width: none;
+    min-height: 100dvh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .content {
+    flex: 1;
+  }
+}

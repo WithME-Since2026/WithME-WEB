@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-md) var(--spacing-gutter) var(--spacing-gutter);
+}
+
+.divider {
+  height: 1px;
+  background: var(--color-invite-border);
+}
+
+.title {
+  margin: 0;
+  padding-top: var(--spacing-gutter);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  color: var(--color-invite-text-strong);
+}
+
+.description {
+  margin: 0;
+  padding-top: var(--spacing-xs);
+  font-size: 13px;
+  line-height: 19.5px;
+  color: var(--color-invite-text-muted);
+}
+
+.kakaoButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  height: 52px;
+  margin-top: 22px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 22.5px;
+  color: var(--color-kakao-text);
+  background: var(--color-kakao);
+  border-radius: var(--radius-card);
+}
+
+.notice {
+  margin: 0;
+  padding-top: 17px;
+  font-size: 11px;
+  line-height: 17.6px;
+  color: var(--color-invite-text-hint);
+  text-align: center;
+}
