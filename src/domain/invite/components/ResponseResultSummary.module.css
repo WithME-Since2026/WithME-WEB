@@ -25,8 +25,8 @@
 
 .description {
   margin: 0;
-  font-size: 13px;
-  line-height: 19.5px;
+  font-size: 14px;
+  line-height: 21px;
   color: var(--color-invite-text-muted);
   text-align: center;
 }
@@ -45,4 +45,12 @@
 
 .absent .title {
   color: var(--color-invite-absent);
+}
+
+.pending .iconCircle {
+  background: var(--color-invite-pending-background);
+}
+
+.pending .title {
+  color: var(--color-invite-pending);
 }

@@ -10,10 +10,10 @@
   align-items: center;
   justify-content: center;
   gap: var(--spacing-xs);
-  height: 56px;
-  font-size: 13px;
+  height: 64px;
+  font-size: 14px;
   font-weight: 600;
-  line-height: 19.5px;
+  line-height: 21px;
   color: var(--color-invite-text-muted);
   background: var(--color-background);
   border: 2px solid var(--color-invite-border);

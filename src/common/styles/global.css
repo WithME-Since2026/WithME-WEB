@@ -15,6 +15,9 @@ body {
   color: var(--color-text-primary);
   background: var(--color-invite-page-background);
   -webkit-font-smoothing: antialiased;
+  /* 한국어가 음절 단위로 끊기지 않고 단어 단위로 줄바꿈되도록 */
+  word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 
 #root {

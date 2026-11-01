@@ -35,25 +35,15 @@ export function InviteResponsePage() {
   const [attendanceStatus, setAttendanceStatus] = useState<InviteAttendanceStatus | null>(null);
   const [message, setMessage] = useState('');
   const [name, setName] = useState('');
+  const [isNameRequiredVisible, setIsNameRequiredVisible] = useState(false);
 
   const isSubmitDisabled = !attendanceStatus || !name.trim() || isPending;
 
-  const handleDecideLater = () => {
-    // TODO: "나중에 결정할게요"의 동작(PENDING 제출 여부) 확정 후 연결. 지금은 선택만 해제
-    setAttendanceStatus(null);
-  };
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    if (!attendanceStatus || !name.trim()) {
-      return;
-    }
-
+  const submitAttendance = (status: InviteAttendanceStatus) => {
     submitResponse(
       {
         inviteCode,
-        attendanceStatus,
+        attendanceStatus: status,
         name: name.trim(),
         message: message.trim() || undefined,
       },
@@ -64,6 +54,36 @@ export function InviteResponsePage() {
         },
       },
     );
+  };
+
+  // 운영자가 "미정" 응답자를 구분할 수 있도록 PENDING으로 제출 (응답자 식별을 위해 이름 필수)
+  const handleDecideLater = () => {
+    if (isPending) {
+      return;
+    }
+
+    if (!name.trim()) {
+      setIsNameRequiredVisible(true);
+      return;
+    }
+
+    setAttendanceStatus(null);
+    submitAttendance('PENDING');
+  };
+
+  const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setName(event.target.value);
+    setIsNameRequiredVisible(false);
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (!attendanceStatus || !name.trim()) {
+      return;
+    }
+
+    submitAttendance(attendanceStatus);
   };
 
   if (isLoading) {
@@ -111,10 +131,15 @@ export function InviteResponsePage() {
         <input
           className={styles.nameInput}
           value={name}
-          onChange={(event) => setName(event.target.value)}
+          onChange={handleNameChange}
           placeholder="이름을 입력해주세요"
           aria-label="이름"
+          aria-invalid={isNameRequiredVisible}
         />
+
+        {isNameRequiredVisible && (
+          <p className={styles.errorMessage}>나중에 결정하려면 이름을 입력해주세요.</p>
+        )}
 
         {submitError && (
           <p className={styles.errorMessage}>

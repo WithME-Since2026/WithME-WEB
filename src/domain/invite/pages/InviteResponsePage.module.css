@@ -6,9 +6,9 @@
 
 .sectionLabel {
   margin: 0;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
-  line-height: 19.5px;
+  line-height: 21px;
   color: var(--color-invite-text-strong);
 }
 
@@ -16,11 +16,14 @@
   padding-top: 12px;
 }
 
+/* 글자는 작게 두되 터치 영역은 44px 확보 */
 .decideLaterButton {
   align-self: center;
-  margin-top: var(--spacing-md);
-  font-size: 11px;
-  line-height: 16.5px;
+  min-height: 44px;
+  margin-top: var(--spacing-xs);
+  padding: 0 var(--spacing-md);
+  font-size: 12px;
+  line-height: 18px;
   color: var(--color-invite-text-subtle);
   text-decoration: underline;
   text-decoration-color: rgba(156, 163, 175, 0.5);
@@ -29,15 +32,15 @@
 
 .messageLabel {
   margin: 0;
-  padding: var(--spacing-md) 0 var(--spacing-sm);
-  font-size: 13px;
+  padding: var(--spacing-sm) 0 var(--spacing-sm);
+  font-size: 14px;
   font-weight: 600;
-  line-height: 19.5px;
+  line-height: 21px;
   color: var(--color-invite-text-strong);
 }
 
 .optionalLabel {
-  font-size: 11px;
+  font-size: 12px;
   line-height: 16.5px;
   color: var(--color-invite-text-subtle);
 }
@@ -46,7 +49,8 @@
 .nameInput {
   width: 100%;
   padding: 0 var(--spacing-md);
-  font-size: 13px;
+  /* iOS Safari·인앱 브라우저는 16px 미만 입력창 포커스 시 화면을 자동 확대함 */
+  font-size: 16px;
   color: var(--color-invite-text-strong);
   background: var(--color-invite-input-background);
   border: 1px solid var(--color-invite-border);
@@ -65,28 +69,28 @@
 }
 
 .messageInput {
-  height: 65px;
+  height: 80px;
   padding-block: 12px;
-  line-height: 19.5px;
+  line-height: 24px;
   resize: none;
 }
 
 .nameInput {
-  height: 44px;
-  margin-top: 17px;
+  height: 48px;
+  margin-top: 12px;
 }
 
 .errorMessage {
-  margin: 12px 0 0;
-  font-size: 12px;
-  line-height: 18px;
+  margin: var(--spacing-sm) 0 0;
+  font-size: 13px;
+  line-height: 19.5px;
   color: var(--color-invite-absent);
 }
 
 .submitButton {
-  height: 48px;
+  height: 52px;
   margin-top: var(--spacing-md);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   line-height: 21px;
   color: #ffffff;

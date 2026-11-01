@@ -29,6 +29,7 @@ export async function getInviteMeeting(inviteCode: string): Promise<InviteMeetin
 }
 
 // TODO: 웹 참석 응답 제출 API 확정 후 apiClient.patch로 교체
+// TODO: PENDING 응답자가 같은 링크로 재방문 시 응답을 수정할 수 있도록 응답자 식별 방식 백엔드와 합의 필요
 export async function submitInviteResponse(
   request: SubmitInviteResponseRequest,
 ): Promise<SubmitInviteResponseResponse> {

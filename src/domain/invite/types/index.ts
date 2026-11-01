@@ -1,5 +1,6 @@
 // 백엔드 GroupResponse의 attendanceStatus enum 값과 맞춤 (ATTEND / ABSENT)
-export type InviteAttendanceStatus = 'ATTEND' | 'ABSENT';
+// TODO: PENDING("나중에 결정할게요")은 백엔드 enum 추가 합의 필요
+export type InviteAttendanceStatus = 'ATTEND' | 'ABSENT' | 'PENDING';
 
 export type InviteMeetingResponse = {
   inviteCode: string;
