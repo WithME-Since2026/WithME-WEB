@@ -1,0 +1,36 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.start {
+  justify-content: flex-start;
+}
+
+.center {
+  justify-content: center;
+}
+
+.button {
+  display: flex;
+  border-radius: 10px;
+  transition: transform 0.15s ease;
+}
+
+.button:active {
+  transform: scale(0.97);
+}
+
+/* 공식 배지는 비율을 유지한 채 높이만 맞춤 (360px 화면에서도 두 배지가 한 줄에 들어가는 크기) */
+.badge {
+  display: block;
+  width: auto;
+  height: 40px;
+}
+
+@media (min-width: 900px) {
+  .badge {
+    height: 44px;
+  }
+}

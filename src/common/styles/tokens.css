@@ -44,6 +44,11 @@
   --color-invite-absent-background: #fee2e2;
   --color-invite-pending: #d97706;
   --color-invite-pending-background: #fef3c7;
+  /* 랜딩 페이지 전용 팔레트 */
+  --color-landing-hero: #1a73e8;
+  --color-landing-surface: #f6f8fc;
+  --color-landing-tint: #eef3ff;
+  --color-landing-accent: #ffd466;
   --color-kakao: #fee500;
   --color-kakao-text: #191919;
 
@@ -70,8 +75,8 @@
   --font-caption: 400 12px / 18px var(--font-family);
 
   --font-family:
-    -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Pretendard', 'Noto Sans KR',
-    sans-serif;
+    'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo',
+    'Noto Sans KR', sans-serif;
 
   /* 참여자는 대부분 휴대폰으로 링크를 열기 때문에 모바일 폭 기준으로 레이아웃 */
   --layout-max-width: 480px;

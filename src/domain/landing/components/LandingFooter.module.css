@@ -1,0 +1,11 @@
+.footer {
+  padding: var(--spacing-lg) var(--spacing-gutter) var(--spacing-xl);
+  border-top: 1px solid var(--color-invite-border);
+}
+
+.copyright {
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-invite-text-subtle);
+  text-align: center;
+}

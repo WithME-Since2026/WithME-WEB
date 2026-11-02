@@ -1,0 +1,135 @@
+.hero {
+  overflow: hidden;
+  padding: 40px var(--spacing-gutter) 0;
+  background: var(--color-landing-surface);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+  color: var(--color-invite-text-strong);
+}
+
+.highlight {
+  position: relative;
+  isolation: isolate;
+  color: var(--color-landing-hero);
+}
+
+/* 손으로 쓱 그은 듯한 밑줄. 페이지가 열리면 왼쪽부터 그려짐 */
+.underline {
+  position: absolute;
+  right: -4px;
+  bottom: -0.08em;
+  left: -4px;
+  z-index: -1;
+  width: calc(100% + 8px);
+  height: 0.32em;
+  overflow: visible;
+}
+
+.underline path {
+  fill: none;
+  stroke: var(--color-landing-accent);
+  stroke-width: 7;
+  stroke-linecap: round;
+  /* 선이 그려지기 전에 시작점에 둥근 끝이 보이지 않도록 여유를 둠 */
+  stroke-dasharray: 1 2;
+  stroke-dashoffset: 1.05;
+  animation: draw 0.8s ease-out 0.4s forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .underline path {
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+}
+
+.description {
+  max-width: 440px;
+  margin: 20px 0 0;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--color-invite-text-muted);
+}
+
+/* 의미 단위가 중간에 끊기지 않도록 구절 단위로만 줄바꿈 */
+.description span {
+  display: inline-block;
+}
+
+.storeButtons {
+  margin-top: 28px;
+}
+
+.note {
+  margin: 12px 0 0;
+  font-size: 14px;
+  color: var(--color-invite-text-subtle);
+}
+
+/* 참여자가 링크를 열면 보는 실제 웹 화면. 아래쪽은 섹션 경계에서 잘림 */
+.screen {
+  align-self: center;
+  width: 260px;
+  height: 400px;
+  overflow: hidden;
+  border: 1px solid var(--color-invite-border);
+  border-bottom: none;
+  border-radius: 32px 32px 0 0;
+  box-shadow: 0 20px 48px rgba(16, 24, 40, 0.12);
+}
+
+.screen img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 900px) {
+  .hero {
+    padding-top: 72px;
+  }
+
+  .inner {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .copy {
+    padding-top: 40px;
+  }
+
+  .title {
+    font-size: 60px;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+
+  .screen {
+    width: 320px;
+    height: 500px;
+    margin-right: 40px;
+  }
+}

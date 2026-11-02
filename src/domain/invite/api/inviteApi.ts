@@ -16,15 +16,15 @@ export async function getInviteMeeting(inviteCode: string): Promise<InviteMeetin
   return {
     inviteCode,
     roundLabel: '3회차',
-    title: '화요일 독서모임',
+    title: '화요 독서모임',
     coverImageUrl: mockMeetingCover,
     memberCount: 12,
     memberAvatarUrls: [mockAvatar1, mockAvatar2, mockAvatar3, mockAvatar4],
-    inviterName: '홍길동',
+    inviterName: '서연',
     inviterAvatarUrl: mockAvatar1,
-    dateText: '2025년 7월 15일 (화)',
-    timeText: '오후 7:00 – 9:00',
-    locationText: '서울 강남구 대학로 1',
+    dateText: '2026년 11월 17일 (화)',
+    timeText: '오후 7:30 – 9:30',
+    locationText: '서울 마포구 연남로 1, 2층',
   };
 }
 
