@@ -1,0 +1,252 @@
+/* 다른 섹션과 왼쪽 정렬선을 맞추기 위해 좌우 여백을 포함한 너비로 제한 */
+.section {
+  max-width: calc(1080px + var(--spacing-gutter) * 2);
+  margin: 0 auto;
+  padding: 72px var(--spacing-gutter) 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.03em;
+  color: var(--color-invite-text-strong);
+}
+
+.panels {
+  display: grid;
+  gap: var(--spacing-md);
+  margin-top: 32px;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: var(--color-landing-surface);
+  border-radius: var(--radius-xl);
+}
+
+.panelWithMe {
+  background: var(--color-landing-tint);
+}
+
+.panelLabel {
+  margin: 0 0 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-invite-text-subtle);
+}
+
+.panelWithMe .panelLabel {
+  color: var(--color-landing-hero);
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.mine {
+  align-items: flex-end;
+}
+
+.sender {
+  padding-left: 4px;
+  font-size: 12px;
+  color: var(--color-invite-text-subtle);
+}
+
+.bubble {
+  max-width: 80%;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--color-invite-text-strong);
+  background: var(--color-background);
+  border-radius: 4px 16px 16px;
+}
+
+.mine .bubble {
+  color: #ffffff;
+  background: var(--color-landing-hero);
+  border-radius: 16px 4px 16px 16px;
+}
+
+.unread {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: var(--color-invite-text-subtle);
+  text-align: center;
+}
+
+.linkCard {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 220px;
+  padding: 14px;
+  background: var(--color-background);
+  border: 1px solid var(--color-invite-border);
+  border-radius: 16px 4px 16px 16px;
+}
+
+.linkTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-invite-text-strong);
+}
+
+.linkMeta {
+  font-size: 13px;
+  color: var(--color-invite-text-muted);
+}
+
+.linkButton {
+  margin-top: 10px;
+  padding: 8px 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+  background: var(--color-landing-hero);
+  border-radius: var(--radius-md);
+}
+
+.tally {
+  margin-top: 16px;
+  padding: 18px;
+  background: var(--color-background);
+  border-radius: var(--radius-lg);
+}
+
+.tallyTitle {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-invite-text-strong);
+}
+
+.tallyList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tallyItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: var(--radius-card);
+}
+
+.tallyCount {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.attend {
+  color: var(--color-invite-attend);
+  background: var(--color-invite-attend-background);
+}
+
+.absent {
+  color: var(--color-invite-absent);
+  background: var(--color-invite-absent-background);
+}
+
+/* 앱의 실시간 참석 현황과 같은 구분 (미응답은 회색) */
+.noReply {
+  color: var(--color-invite-text-muted);
+  background: var(--color-invite-chip-background);
+}
+
+.tallyNote {
+  margin: 12px 0 0;
+  font-size: 12px;
+  color: var(--color-invite-text-subtle);
+}
+
+/* 화면에 들어오면 메시지가 하나씩 쌓이는 연출 */
+.message,
+.unread,
+.tally {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.play .message,
+.play .unread,
+.play .tally {
+  animation: pop-in 0.35s ease forwards;
+  animation-delay: calc(var(--order, 0) * 180ms);
+}
+
+/* WithME 쪽은 단톡방 대화가 다 쌓인 뒤에 등장해 대비를 줌 */
+.play .panelWithMe .message,
+.play .panelWithMe .tally {
+  animation-delay: calc(1300ms + var(--order, 0) * 250ms);
+}
+
+@keyframes pop-in {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .message,
+  .unread,
+  .tally {
+    opacity: 1;
+    transform: none;
+  }
+
+  .play .message,
+  .play .unread,
+  .play .tally {
+    animation: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .panels {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+  }
+
+  .panel {
+    padding: 28px;
+  }
+}
+
+@media (min-width: 900px) {
+  .section {
+    padding-top: 120px;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .panels {
+    margin-top: 48px;
+  }
+}

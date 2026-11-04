@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.iconCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: var(--spacing-md);
+  border-radius: var(--radius-full);
+}
+
+.title {
+  margin: 0;
+  padding-bottom: var(--spacing-xs);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: center;
+}
+
+.description {
+  margin: 0;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--color-invite-text-muted);
+  text-align: center;
+}
+
+.attend .iconCircle {
+  background: var(--color-invite-attend-background);
+}
+
+.attend .title {
+  color: var(--color-invite-attend);
+}
+
+.absent .iconCircle {
+  background: var(--color-invite-absent-background);
+}
+
+.absent .title {
+  color: var(--color-invite-absent);
+}
+
+.pending .iconCircle {
+  background: var(--color-invite-pending-background);
+}
+
+.pending .title {
+  color: var(--color-invite-pending);
+}

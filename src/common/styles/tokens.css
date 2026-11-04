@@ -22,6 +22,36 @@
   --color-pending: #6b7280;
   --color-pending-background: #ebebed;
 
+  /* 초대 링크 웹 화면 전용 팔레트 (Figma "웹 응답 화면" 섹션 고정 컬러) */
+  --color-invite-page-background: #f4f6fb;
+  --color-invite-card-shadow: rgba(50, 63, 114, 0.12);
+  --color-invite-text-strong: #1a1d2e;
+  --color-invite-text-muted: #6b7280;
+  --color-invite-text-subtle: #9ca3af;
+  --color-invite-text-hint: #b0b7c3;
+  --color-invite-placeholder: #c4c9d4;
+  --color-invite-border: #e0e4ef;
+  --color-invite-header-border: #f0f1f5;
+  --color-invite-chip-background: #f2f4f8;
+  --color-invite-info-background: #f0f6ff;
+  --color-invite-info-border: #dce8fc;
+  --color-invite-input-background: #f8f9fc;
+  --color-invite-banner-background: #f8f9ff;
+  --color-invite-badge-background: #e8f0fe;
+  --color-invite-attend: #059669;
+  --color-invite-attend-background: #d1fae5;
+  --color-invite-absent: #dc2626;
+  --color-invite-absent-background: #fee2e2;
+  --color-invite-pending: #d97706;
+  --color-invite-pending-background: #fef3c7;
+  /* 랜딩 페이지 전용 팔레트 */
+  --color-landing-hero: #1a73e8;
+  --color-landing-surface: #f6f8fc;
+  --color-landing-tint: #eef3ff;
+  --color-landing-accent: #ffd466;
+  --color-kakao: #fee500;
+  --color-kakao-text: #191919;
+
   --spacing-xs: 4px;
   --spacing-sm: 8px;
   --spacing-md: 16px;
@@ -34,6 +64,7 @@
   --radius-md: 8px;
   --radius-card: 12px;
   --radius-lg: 16px;
+  --radius-xl: 20px;
   --radius-full: 9999px;
 
   --font-heading1: 700 28px / 36px var(--font-family);
@@ -44,8 +75,8 @@
   --font-caption: 400 12px / 18px var(--font-family);
 
   --font-family:
-    -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Pretendard', 'Noto Sans KR',
-    sans-serif;
+    'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo',
+    'Noto Sans KR', sans-serif;
 
   /* 참여자는 대부분 휴대폰으로 링크를 열기 때문에 모바일 폭 기준으로 레이아웃 */
   --layout-max-width: 480px;

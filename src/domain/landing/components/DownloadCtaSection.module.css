@@ -1,0 +1,84 @@
+/* 바로 위 사용 방법 섹션도 흰 배경이라 위쪽 여백은 그 섹션의 아래 여백으로 대신함 */
+.section {
+  padding: 0 var(--spacing-gutter) 72px;
+}
+
+.card {
+  position: relative;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 40px var(--spacing-lg);
+  overflow: hidden;
+  background: var(--color-landing-tint);
+  border-radius: 24px;
+}
+
+.title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.03em;
+  color: var(--color-invite-text-strong);
+}
+
+.description {
+  margin: 12px 0 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-invite-text-muted);
+}
+
+.storeButtons {
+  margin-top: 24px;
+}
+
+/* 캐릭터는 페이지에서 이곳 한 번만, 카드 오른쪽 아래에서 말풍선과 함께 */
+.mascot {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .mascot {
+    position: absolute;
+    right: 48px;
+    bottom: -16px;
+    display: block;
+  }
+
+  .penguin {
+    display: block;
+    width: 168px;
+    height: auto;
+  }
+
+  .speech {
+    position: absolute;
+    right: 128px;
+    bottom: 150px;
+    margin: 0;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.45;
+    color: var(--color-invite-text-strong);
+    white-space: nowrap;
+    background: var(--color-background);
+    border-radius: 16px 16px 4px;
+    box-shadow: 0 4px 12px rgba(16, 24, 40, 0.08);
+  }
+}
+
+@media (min-width: 900px) {
+  .section {
+    padding: 0 var(--spacing-gutter) 120px;
+  }
+
+  .card {
+    padding: 56px 64px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+}

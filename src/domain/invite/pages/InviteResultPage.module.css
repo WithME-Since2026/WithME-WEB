@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-lg) var(--spacing-gutter);
+}
+
+.infoCard {
+  padding-top: var(--spacing-lg);
+}
+
+.downloadCard {
+  padding-top: var(--spacing-md);
+}

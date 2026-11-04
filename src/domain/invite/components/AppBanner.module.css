@@ -1,0 +1,56 @@
+.banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 69px;
+  padding: 12px var(--spacing-gutter);
+  background: var(--color-invite-banner-background);
+  border-top: 1px solid var(--color-invite-border);
+}
+
+.logo {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+}
+
+.texts {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 19.5px;
+  color: var(--color-invite-text-strong);
+}
+
+.description {
+  margin: 0;
+  padding-top: 2px;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--color-invite-text-muted);
+}
+
+.installButton {
+  flex-shrink: 0;
+  height: 36px;
+  padding: 0 var(--spacing-md);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  color: var(--color-meeting-primary);
+  border: 1px solid var(--color-meeting-primary);
+  border-radius: 7px;
+}
+
+/* 좁은 화면에서는 설명이 여러 줄로 깨지므로 제목만 노출 */
+@media (max-width: 360px) {
+  .description {
+    display: none;
+  }
+}
