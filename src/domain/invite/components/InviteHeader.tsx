@@ -2,7 +2,6 @@ import styles from './InviteHeader.module.css';
 
 import logo from '@/assets/images/logo.png';
 
-
 type InviteHeaderProps = {
   roundLabel: string;
 };

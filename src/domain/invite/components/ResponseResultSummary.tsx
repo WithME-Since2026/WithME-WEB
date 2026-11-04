@@ -6,15 +6,17 @@ import resultAbsentIcon from '@/assets/icons/result-absent.svg';
 import resultAttendIcon from '@/assets/icons/result-attend.svg';
 import resultPendingIcon from '@/assets/icons/result-pending.svg';
 
-
-
 const RESULT_BY_STATUS: Record<
   InviteAttendanceStatus,
   { icon: string; title: string; className: string }
 > = {
   ATTEND: { icon: resultAttendIcon, title: '참석으로 응답했어요', className: styles.attend },
   ABSENT: { icon: resultAbsentIcon, title: '불참으로 응답했어요', className: styles.absent },
-  PENDING: { icon: resultPendingIcon, title: '나중에 결정하기로 했어요', className: styles.pending },
+  PENDING: {
+    icon: resultPendingIcon,
+    title: '나중에 결정하기로 했어요',
+    className: styles.pending,
+  },
 };
 
 type ResponseResultSummaryProps = {

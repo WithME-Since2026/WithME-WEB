@@ -7,8 +7,6 @@ import absentSelectedIcon from '@/assets/icons/absent-selected.svg';
 import attendDefaultIcon from '@/assets/icons/attend-default.svg';
 import attendSelectedIcon from '@/assets/icons/attend-selected.svg';
 
-
-
 const CHOICES: {
   value: InviteAttendanceStatus;
   label: string;
@@ -39,7 +37,7 @@ type AttendanceChoiceButtonsProps = {
 
 export function AttendanceChoiceButtons({ value, onChange }: AttendanceChoiceButtonsProps) {
   return (
-    <div className={styles.row} role="radiogroup" aria-label="참석 여부">
+    <div className={styles.row} role="group" aria-label="참석 여부">
       {CHOICES.map((choice) => {
         const isSelected = value === choice.value;
 
@@ -47,8 +45,7 @@ export function AttendanceChoiceButtons({ value, onChange }: AttendanceChoiceBut
           <button
             key={choice.value}
             type="button"
-            role="radio"
-            aria-checked={isSelected}
+            aria-pressed={isSelected}
             className={`${styles.button} ${isSelected ? choice.selectedClassName : ''}`}
             onClick={() => onChange(choice.value)}
           >

@@ -4,7 +4,6 @@ import calendarIcon from '@/assets/icons/calendar.svg';
 import clockIcon from '@/assets/icons/clock.svg';
 import locationIcon from '@/assets/icons/location.svg';
 
-
 type MeetingInfoCardProps = {
   dateText: string;
   timeText: string;

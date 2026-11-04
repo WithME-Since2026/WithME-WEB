@@ -2,7 +2,6 @@ import styles from './KakaoLoginSection.module.css';
 
 import kakaoIcon from '@/assets/icons/kakao.svg';
 
-
 type KakaoLoginSectionProps = {
   onKakaoLogin: () => void;
 };

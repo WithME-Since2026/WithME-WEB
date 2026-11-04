@@ -2,7 +2,6 @@ import styles from './AppDownloadCard.module.css';
 
 import downloadIcon from '@/assets/icons/download.svg';
 
-
 // TODO: 앱 스토어 주소 확정 후 앱 다운로드 버튼에 링크 연결
 export function AppDownloadCard() {
   return (

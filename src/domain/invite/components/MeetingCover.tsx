@@ -2,7 +2,6 @@ import styles from './MeetingCover.module.css';
 
 import membersIcon from '@/assets/icons/members.svg';
 
-
 type MeetingCoverProps = {
   title: string;
   coverImageUrl: string;

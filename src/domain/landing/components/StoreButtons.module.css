@@ -34,3 +34,13 @@
     height: 44px;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+
+  .button:active {
+    transform: none;
+  }
+}
