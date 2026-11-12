@@ -1,6 +1,8 @@
 .container {
   display: flex;
   flex: 1;
+  flex-direction: column;
+  gap: var(--spacing-md);
   align-items: center;
   justify-content: center;
   min-height: 100dvh;
@@ -12,6 +14,16 @@
   font: var(--font-body1);
   color: var(--color-text-secondary);
   text-align: center;
+}
+
+.actionButton {
+  min-height: 44px;
+  padding: 0 var(--spacing-lg);
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--color-meeting-primary);
+  border-radius: var(--radius-card);
 }
 
 .spinner {

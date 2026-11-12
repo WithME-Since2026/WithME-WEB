@@ -4,18 +4,34 @@ import kakaoIcon from '@/assets/icons/kakao.svg';
 
 type KakaoLoginSectionProps = {
   onKakaoLogin: () => void;
+  isPending?: boolean;
+  errorMessage?: string;
 };
 
-export function KakaoLoginSection({ onKakaoLogin }: KakaoLoginSectionProps) {
+export function KakaoLoginSection({
+  onKakaoLogin,
+  isPending = false,
+  errorMessage,
+}: KakaoLoginSectionProps) {
   return (
     <section className={styles.container}>
       <div className={styles.divider} />
       <p className={styles.title}>참석 응답을 남기려면 로그인이 필요해요</p>
       <p className={styles.description}>카카오 계정으로 빠르게 시작할 수 있어요</p>
-      <button type="button" className={styles.kakaoButton} onClick={onKakaoLogin}>
+      <button
+        type="button"
+        className={styles.kakaoButton}
+        onClick={onKakaoLogin}
+        disabled={isPending}
+      >
         <img src={kakaoIcon} alt="" width={18} height={18} />
         카카오로 시작하기
       </button>
+      {errorMessage && (
+        <p className={styles.errorMessage} role="alert">
+          {errorMessage}
+        </p>
+      )}
       <p className={styles.notice}>
         웹에서는 카카오 로그인만 지원해요.
         <br />

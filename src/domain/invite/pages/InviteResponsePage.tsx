@@ -1,10 +1,11 @@
 import { useState } from 'react';
 
-import { useNavigate, useParams } from 'react-router-dom';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 
 import { getApiErrorMessage } from '@/common/api/apiError';
 import { ErrorView } from '@/common/components/ErrorView';
 import { LoadingView } from '@/common/components/LoadingView';
+import { hasAccessToken } from '@/common/storage/authTokenStorage';
 
 import pageStyles from './InvitePage.module.css';
 import styles from './InviteResponsePage.module.css';
@@ -16,7 +17,6 @@ import { MeetingInfoCard } from '@/domain/invite/components/MeetingInfoCard';
 import { useInviteMeetingQuery } from '@/domain/invite/hooks/useInviteMeetingQuery';
 import { useSubmitInviteResponseMutation } from '@/domain/invite/hooks/useSubmitInviteResponseMutation';
 import type { InviteAttendanceStatus } from '@/domain/invite/types';
-
 
 export type InviteResultLocationState = {
   attendanceStatus: InviteAttendanceStatus;
@@ -85,6 +85,11 @@ export function InviteResponsePage() {
 
     submitAttendance(attendanceStatus);
   };
+
+  // 로그인하지 않았거나 토큰 재발급까지 실패한 경우 로그인 화면으로
+  if (!hasAccessToken()) {
+    return <Navigate to={`/invite/${inviteCode}`} replace />;
+  }
 
   if (isLoading) {
     return <LoadingView />;

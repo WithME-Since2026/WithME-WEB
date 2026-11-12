@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { EmptyView } from '@/common/components/EmptyView';
 
+import { KakaoCallbackPage } from '@/domain/auth/pages/KakaoCallbackPage';
 import { InviteLoginPage } from '@/domain/invite/pages/InviteLoginPage';
 import { InviteResponsePage } from '@/domain/invite/pages/InviteResponsePage';
 import { InviteResultPage } from '@/domain/invite/pages/InviteResultPage';
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: '/contact',
     element: <ContactPage />,
+  },
+  {
+    path: '/oauth/kakao/callback',
+    element: <KakaoCallbackPage />,
   },
   {
     path: '/invite/:inviteCode',

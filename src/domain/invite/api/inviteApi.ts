@@ -10,7 +10,6 @@ import mockAvatar3 from '@/assets/images/mock-avatar-3.jpg';
 import mockAvatar4 from '@/assets/images/mock-avatar-4.jpg';
 import mockMeetingCover from '@/assets/images/mock-meeting-cover.jpg';
 
-
 // TODO: 초대 코드로 모임 정보를 조회하는 백엔드 API 확정 후 apiClient.get으로 교체
 export async function getInviteMeeting(inviteCode: string): Promise<InviteMeetingResponse> {
   return {

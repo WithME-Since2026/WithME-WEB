@@ -12,7 +12,6 @@ import { MeetingInfoCard } from '@/domain/invite/components/MeetingInfoCard';
 import { ResponseResultSummary } from '@/domain/invite/components/ResponseResultSummary';
 import { useInviteMeetingQuery } from '@/domain/invite/hooks/useInviteMeetingQuery';
 
-
 export function InviteResultPage() {
   const { inviteCode = '' } = useParams();
   const location = useLocation();
